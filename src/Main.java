@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.util.Arrays;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -19,13 +20,9 @@ public class Main {
         int min = inputArray1[0];
         for (int i : inputArray1) {
             sum += i;
-        }
-        for (int i : inputArray1) {
             if (max < i) {
                 max = i;
             }
-        }
-        for (int i : inputArray1) {
             if (min > i) {
                 min = i;
             }
@@ -39,7 +36,7 @@ public class Main {
     public static void task2() {
         System.out.println("Задача №2");
         int[] inputArray2 = {7800, 5600, 8031, 9305, 6999};
-        float[] outputArray2 = new float[5];
+        float[] outputArray2 = new float[inputArray2.length];
         int element = 0;
         for (float pay : inputArray2) {
             float tax = pay * 0.13f;
@@ -53,7 +50,7 @@ public class Main {
     public static void task3() {
         System.out.println("Задача №3");
         int[] inputArray3 = {3600, 5809, 4071, 6205, 3999};
-        boolean[] outputArray3 = new boolean[5];
+        boolean[] outputArray3 = new boolean[inputArray3.length];
         int index = 0;
         for (int pay : inputArray3) {
             if (pay > 5000) {
@@ -70,29 +67,25 @@ public class Main {
     public static void task4() {
         System.out.println("Задача №4");
         int[] inputArray4 = {1200, 2103, 152, -627, 1006};
-        boolean outputArray4 = true;
+        boolean[] outputArray4 = {true};
         for (int credit : inputArray4) {
             if (credit < 0) {
-                outputArray4 = false;
+                outputArray4[0] = false;
                 break;
             }
         }
         System.out.println(Arrays.toString(inputArray4));
-        System.out.println(outputArray4);
+        System.out.println(Arrays.toString(outputArray4));
     }
 
     public static void task5() {
         System.out.println("Задача №5");
-        int[] inputArray5 = {3100, 9103, 4152, 7627, -2006};
-        boolean[] outputArray5 = new boolean[5];
-        int index = 0;
+        int[] inputArray5 = {3100, 9103, 4152, 7627, 2006};
+        boolean[] outputArray5 = {true};
         for (int pay : inputArray5) {
-            if (pay > 0) {
-                outputArray5[index] = true;
-            } else {
-                outputArray5[index] = false;
+            if (pay < 0) {
+                outputArray5[0] = false;
             }
-            index++;
         }
         System.out.println(Arrays.toString(inputArray5));
         System.out.println(Arrays.toString(outputArray5));
