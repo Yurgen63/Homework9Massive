@@ -80,14 +80,16 @@ public class Main {
 
     public static void task5() {
         System.out.println("Задача №5");
-        int[] inputArray5 = {3100, 9103, 4152, 7627, 2006};
-        boolean[] outputArray5 = {true};
+        int[] inputArray5 = {-3100, 9103, 4152, 7627, -2006};
+        int[] outputArray5 = new int[1];
+        int elements = 0;
         for (int pay : inputArray5) {
-            if (pay < 0) {
-                outputArray5[0] = false;
+            if (pay > 0) {
+                elements += 1;
+                outputArray5[0] = elements;
             }
         }
         System.out.println(Arrays.toString(inputArray5));
-        System.out.println(Arrays.toString(outputArray5));
+        System.out.println(Arrays.toString(outputArray5) + " месяца в компании были рентабельными");
     }
 }
